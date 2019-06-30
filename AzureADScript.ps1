@@ -81,7 +81,6 @@ function AddGroupMembers($group) {
 
 #-----------------------------[Execution]-----------------------------
 #connecting to Azure Active Directory account
-#Connect-AzureAD -TenantId 9a441b91-2495-433f-89c1-1b362028d49c
 $Credential = Get-Credential
 Connect-AzureAD -Credential $Credential
 
