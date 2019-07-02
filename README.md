@@ -8,7 +8,7 @@
 •	Creates an Azure Active Directory Security group with the name of “Varonis Assignment2 Group”.
 
 •	Adds each of the user accounts created in the previous step to the “Varonis Assignment2 Group”, the accounts should be added 	    separately, and not as a bulk.
-All the users must be added successfully at the end of the script execution and errors should be handled efficiently. – what if a user is already exist 
+All the users must be added successfully at the end of the script execution and errors should be handled efficiently.
   
 •	The script should generate a customized log that includes the following details for each attempt to add the user account to the security group:
 
