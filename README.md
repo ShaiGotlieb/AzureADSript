@@ -15,6 +15,5 @@ o	Timestep of the attempt to add the user to the group.
 
 o	Result of the attempt (success\failure)
 
-Simulation:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1i-PWE9I2-I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Simulation Video:
+https://youtu.be/1i-PWE9I2-I
