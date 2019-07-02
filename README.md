@@ -23,3 +23,6 @@ https://youtu.be/1i-PWE9I2-I
 
 ## Flowchart
 ![Varonis](https://user-images.githubusercontent.com/30575967/60546558-3d0b9c80-9d26-11e9-80b0-8078c0ee2026.png)
+
+## Log File Screentshot
+<img width="439" alt="logFileResultExample" src="https://user-images.githubusercontent.com/30575967/60547015-5234fb00-9d27-11e9-97e5-d37ba9df24cf.png">
