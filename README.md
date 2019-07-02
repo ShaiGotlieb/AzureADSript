@@ -1,6 +1,6 @@
 Assignment : Use PowerShell to develop a script that does the following:
 
-•	Creates 20 Azure Active Directory User accounts with the name of “Test User <Counter>”.
+•	Creates 20 Azure Active Directory User accounts with the name of “Test User Counter”.
   
 •	Creates an Azure Active Directory Security group with the name of “Varonis Assignment2 Group”.
 
