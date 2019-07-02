@@ -1,4 +1,7 @@
-Assignment : Use PowerShell to develop a script that does the following:
+# Azure Active Directory Account Script
+
+## Assignment: 
+#### Use PowerShell to develop a script that does the following:
 
 •	Creates 20 Azure Active Directory User accounts with the name of “Test User Counter”.
   
@@ -15,8 +18,8 @@ All the users must be added successfully at the end of the script execution and 
 
   o	Result of the attempt (success\failure)
 
-Simulation Video:
+## Simulation Video:
 https://youtu.be/1i-PWE9I2-I
 
-
+## Flowchart
 ![Varonis](https://user-images.githubusercontent.com/30575967/60546558-3d0b9c80-9d26-11e9-80b0-8078c0ee2026.png)
