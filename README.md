@@ -1,0 +1,2 @@
+# AzureADSript
+Test test
