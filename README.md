@@ -19,7 +19,7 @@ All the users must be added successfully at the end of the script execution and 
   o	Result of the attempt (success\failure)
 
 ## Simulation Video:
-https://youtu.be/1i-PWE9I2-I
+https://youtu.be/4ijO28EcdiM
 
 ## Flowchart
 ![Varonis](https://user-images.githubusercontent.com/30575967/60546558-3d0b9c80-9d26-11e9-80b0-8078c0ee2026.png)
