@@ -23,7 +23,7 @@ All the users must be added successfully at the end of the script execution and 
 
     - if user name or password are wrong, an exception will be caught
     - user will get 3 attempts to re-connect
-    - message will be printed: "Too many attempts to connect to Azure Active Directory Account. exiting .."
+    - message will be printed
 • Creating new Azure Active Directory account:
 
     - if account with same user name is already exist, an exception will be caught
