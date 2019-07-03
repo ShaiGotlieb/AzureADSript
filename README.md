@@ -20,19 +20,25 @@ All the users must be added successfully at the end of the script execution and 
   
 ## Error Handling:
 • Connecting to Azure account: 
+
     - if user name or password are wrong, an exception will be caught
     - user will get 3 attempts to re-connect
     - message will be printed: "Too many attempts to connect to Azure Active Directory Account. exiting .."
 • Creating new Azure Active Directory account:
+
     - if account with same user name is already exist, an exception will be caught
     - exception details will be printed in red
     - and exception handling method will be invoked: getting user response of exception decision (retry\skip\quit)
+    
 • Creating log file:
+
     - if log file does not exist (not yet generated), a new file will be created
 • Creating new Azure Active Directory Security group:
+
     - if group is already exist, a message will be shown and continue with executing
     - code will continue executing
 • Adding group members:
+
     - if user is already in group, message will be shown and details will be attached to log file
     - Exception will be caught, an exception details will be printed in red
     - content of reason of failure will be attached to log file
