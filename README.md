@@ -48,6 +48,8 @@ All the users must be added successfully at the end of the script execution and 
 • Creating new Azure Active Directory account:
 <img width="208" alt="createUserSuccess" src="https://user-images.githubusercontent.com/30575967/60608564-667d0480-9dc8-11e9-980f-819c5fb2b893.png">
 
+• Adding group members
+<img width="330" alt="addUserSuccess" src="https://user-images.githubusercontent.com/30575967/60608697-bf4c9d00-9dc8-11e9-9885-063999f8fda2.png">
     
 ## Simulation Video
 https://youtu.be/4ijO28EcdiM
