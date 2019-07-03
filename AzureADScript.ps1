@@ -1,16 +1,15 @@
 # Version:        2.0
 # Author:         Shai Gotlieb
-# Creation Date:  02/07/2019
+# Creation Date:  03/06/2019
 #
-# Description:    Creating 20 AzureAD user accounts with the name of “Test User <Counter>”.
+# Description:    creating 20 AzureAD user accounts with the name of “Test User <Counter>”.
 #                 Creating an Azure Active Directory Security group with the name of “Varonis Assignment2 Group”.
 #	              Each of the user accounts will be added as a group member to “Varonis Assignment2 Group”.
 #                 The script generates a customized log file including: 
 #                 User Name | Timestep of creation | Result of the attempt (success\failure)
 #
 # Notes:          The log file will be generated at the current work directory 
-#                 In order to create user accounts properly, Azure User Name and Password is necessary 
-#                 (according to my private account - will be given if asked)      
+#                 In order to create user accounts properly, Azure User Name and Password is necessary (according to my private account - will be given if asked)      
 
 #-----------------------------[Instances]-----------------------------
 $LOG_FILE_DIRECTORY = $PWD
@@ -26,7 +25,7 @@ $running = $true
 $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
 $PasswordProfile.Password = "Aa123456"
 
-$params = @{
+$newUserParams = @{
     AccountEnabled = $true
     DisplayName = "Test User 1"
     PasswordProfile = $PasswordProfile
@@ -40,7 +39,8 @@ function CreateLogFile() {
     if (!(Test-Path $LOG_FILE_PATH)) {
         try { 
             $logFile = New-Item -Path $LOG_FILE_DIRECTORY -Name "AzureADSecurityGroupLogFile.log" -ItemType "file"
-        } catch {
+        } 
+        catch {
             Write-Output "Unable to create log file, please Run As Administrator"
         }
     }
@@ -59,7 +59,7 @@ function IsUserAddedCorrectlyToGroup($group, $userObj) {
 }
 
 function HandleCreateAccountError() {
-    Write-Output "Fail to create account: '$($params.DisplayName)'"
+    Write-Output "Fail to create account: '$($newUserParams.DisplayName)'"
     $UserResponse = Read-Host -Prompt 'retry?[Y] skip?[S] Quit?[Q]'
     switch($UserResponse) {
         y { break } 
@@ -70,21 +70,30 @@ function HandleCreateAccountError() {
     }
 }
 
+function PrintExceptionDetails([Exception]$exception) {
+    Write-host "Caught an exception:" -ForegroundColor Red
+    Write-host "Exception Type: $($exception.GetType().FullName)" -ForegroundColor Red
+    Write-host "Exception Message: $($exception.Message)" -ForegroundColor Red
+}
+
 function CreateAccounts($accountsNumber) {
     $IdCounter = 1;
     For ($i = 1; $i -le $accountsNumber; $i++, $IdCounter++) {
-       $params.DisplayName = "Test User " + $IdCounter
-        $params.MailNickName = "User" + $IdCounter
-        $params.UserPrincipalName = $params.MailNickName + "@ggshaigggmail.onmicrosoft.com"
+        $newUserParams.DisplayName = "Test User " + $IdCounter
+        $newUserParams.MailNickName = "User" + $IdCounter
+        $newUserParams.UserPrincipalName = $newUserParams.MailNickName + "@ggshaigggmail.onmicrosoft.com"
 
         $global:running = $true
         while ($global:running) {
           try {
-            New-AzureADUser @params
-            $global:running = $false  # An exception will skip this
-          } catch {
+            New-AzureADUser @newUserParams
+            Write-Host "account: $($newUserParams.DisplayName) successfully created" -ForegroundColor Green # An exception will skip this
+            $global:running = $false  
+          } 
+          catch {
+             PrintExceptionDetails $_.Exception
              HandleCreateAccountError
-            }
+          }
          }
      }   
 }
@@ -102,17 +111,20 @@ function AddGroupMembers($group) {
         
         try {
             Add-AzureADGroupMember -ObjectId $($group.ObjectId) -RefObjectId $($userObj.ObjectId)
+            Write-Host "user '$($userName)' successfully added to group '$($GROUP_NAME)'" -ForegroundColor Green
             
             If((IsUserAddedCorrectlyToGroup $group $userObj)) { # If user is already in group - this condition will be skipped
                Add-content $LOG_FILE_PATH -Value ($logFileContent + " | " + "SUCCESS")
             }
             else {
-                Add-content $LOG_FILE_PATH -Value ($logFileContent + " | " + "FAILURE")
+               Add-content $LOG_FILE_PATH -Value ($logFileContent + " | " + "FAILURE")
             }
-        } catch {
+        } 
+        catch {
+            PrintExceptionDetails $_.Exception
             Write-Output "Acoount Directory Member: '$($userName)' is already in group!"
             Add-content $LOG_FILE_PATH -Value ($logFileContent + " | " + "User is already in group: '$($GROUP_NAME)'")
-          }
+        }
     }
 }
 
@@ -125,8 +137,10 @@ function ConnectToAzureAD() {
             $Credential = Get-Credential
             Connect-AzureAD -Credential $Credential
             $tryConnecting = $false # An exception will skip this
-        } catch {
+        } 
+        catch {
             If ($attempts -ge $ATTEMPTS_TO_CONNECT) {
+                Write-Output "Too many attempts to connect to Azure Active Directory Account. exiting .."
                 exit
             }
 
@@ -138,6 +152,7 @@ function ConnectToAzureAD() {
 
 function AddNewAzureADGroup() {
     $groupExists = Get-AzureADGroup -SearchString $GROUP_NAME
+    
     if ($groupExists)
     {
         Write-Host "Group $($GROUP_NAME) has already been created." 
