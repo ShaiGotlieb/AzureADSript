@@ -43,6 +43,12 @@ All the users must be added successfully at the end of the script execution and 
     - Exception will be caught, an exception details will be printed in red
     - content of reason of failure will be attached to log file
     
+## Cmdlets On Success
+
+• Creating new Azure Active Directory account:
+<img width="208" alt="createUserSuccess" src="https://user-images.githubusercontent.com/30575967/60608564-667d0480-9dc8-11e9-980f-819c5fb2b893.png">
+
+    
 ## Simulation Video
 https://youtu.be/4ijO28EcdiM
 
