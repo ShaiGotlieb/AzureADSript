@@ -1,6 +1,6 @@
 # Azure Active Directory Account Script
 
-## Requierments: 
+## Requierments
 #### Use PowerShell to develop a script that does the following:
 
 •	Creates 20 Azure Active Directory User accounts with the name of “Test User Counter”.
@@ -18,7 +18,7 @@ All the users must be added successfully at the end of the script execution and 
 
   o	Result of the attempt (success\failure)
   
-## Error Handling:
+## Error Handling
 • Connecting to Azure account: 
 
     - if user name or password are wrong, an exception will be caught
@@ -43,7 +43,7 @@ All the users must be added successfully at the end of the script execution and 
     - Exception will be caught, an exception details will be printed in red
     - content of reason of failure will be attached to log file
     
-## Simulation Video:
+## Simulation Video
 https://youtu.be/4ijO28EcdiM
 
 ## Flowchart
