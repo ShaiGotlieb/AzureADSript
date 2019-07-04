@@ -62,7 +62,8 @@ https://youtu.be/4ijO28EcdiM
 ## Log File Screentshots
 <img width="439" alt="logFileResultExample" src="https://user-images.githubusercontent.com/30575967/60547015-5234fb00-9d27-11e9-97e5-d37ba9df24cf.png">
 
-<img width="330" alt="addUserSuccess" src="https://user-images.githubusercontent.com/30575967/60645346-1db56200-9e41-11e9-8c3d-f9cbe79263c3.png">
+
+<img width="219" alt="failureLogFile" src="https://user-images.githubusercontent.com/30575967/60645464-653bee00-9e41-11e9-8f12-65077e86ace5.png">
 
 <img width="445" alt="accountExistInGroup" src="https://user-images.githubusercontent.com/30575967/60645351-2017bc00-9e41-11e9-8001-305facb874a7.png">
 
