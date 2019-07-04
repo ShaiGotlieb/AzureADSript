@@ -59,5 +59,11 @@ https://youtu.be/4ijO28EcdiM
 ## Flowchart
 ![Varonis](https://user-images.githubusercontent.com/30575967/60546558-3d0b9c80-9d26-11e9-80b0-8078c0ee2026.png)
 
-## Log File Screentshot
+## Log File Screentshots
 <img width="439" alt="logFileResultExample" src="https://user-images.githubusercontent.com/30575967/60547015-5234fb00-9d27-11e9-97e5-d37ba9df24cf.png">
+
+<img width="330" alt="addUserSuccess" src="https://user-images.githubusercontent.com/30575967/60645346-1db56200-9e41-11e9-8c3d-f9cbe79263c3.png">
+
+<img width="445" alt="accountExistInGroup" src="https://user-images.githubusercontent.com/30575967/60645351-2017bc00-9e41-11e9-8001-305facb874a7.png">
+
+<img width="217" alt="accountSuccess" src="https://user-images.githubusercontent.com/30575967/60645354-20b05280-9e41-11e9-9b4d-926ddb18e96d.png">
