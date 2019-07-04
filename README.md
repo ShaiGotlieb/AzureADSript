@@ -57,11 +57,10 @@ All the users must be added successfully at the end of the script execution and 
 https://youtu.be/4ijO28EcdiM
 
 ## Flowchart
-![Varonis](https://user-images.githubusercontent.com/30575967/60546558-3d0b9c80-9d26-11e9-80b0-8078c0ee2026.png)
+![Varonis](https://user-images.githubusercontent.com/30575967/60645707-15a9f200-9e42-11e9-8cdc-920b41750547.png)
 
 ## Log File Screentshots
 <img width="439" alt="logFileResultExample" src="https://user-images.githubusercontent.com/30575967/60547015-5234fb00-9d27-11e9-97e5-d37ba9df24cf.png">
-
 
 <img width="219" alt="failureLogFile" src="https://user-images.githubusercontent.com/30575967/60645464-653bee00-9e41-11e9-8f12-65077e86ace5.png">
 
